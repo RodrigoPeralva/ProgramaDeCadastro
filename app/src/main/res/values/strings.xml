@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Aprendizado</string>
+    <string name="nomeTv">Digite seu nome:</string>
+    <string name="nomeEtv"></string>
+    <string name="emailTv">Escreva seu email:</string>
+    <string name="emailEtv"></string>
+    <string name="cpfTv">Escreva seu CPF:</string>
+    <string name="cpfEtv"></string>
+    <string name="senhaTv">Escreva sua senha:</string>
+    <string name="senhaEtv"></string>
+    <string name="cadastrarBtn">Cadastrar</string>
+    <string name="consultarBtn">Consultar</string>
+    <string name="title_activity_consultar">ConsultarActivity</string>
+</resources>
