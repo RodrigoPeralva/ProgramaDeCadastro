@@ -28,7 +28,7 @@ public class PessoaDB extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(String.format("create table %s(%s text, %s text, %s text, %s text)",
+        db.execSQL(String.format("create table if not exists %s(%s text, %s text, %s text, %s text)",
                 TABLE_NAME,
                 NOME_COLUMN,
                 EMAIL_COLUMN,
@@ -72,7 +72,7 @@ public class PessoaDB extends SQLiteOpenHelper {
     }
 
     public List<Pessoa> listar(){
-        ArrayList<Pessoa> pessoas = new ArrayList<>();
+        ArrayList<Pessoa> listaDePessoas = new ArrayList<>();
         try{
             SQLiteDatabase db = getReadableDatabase();
             Cursor cursor = db.rawQuery("select * from " + TABLE_NAME, null);
@@ -80,6 +80,7 @@ public class PessoaDB extends SQLiteOpenHelper {
                 do {
                     //Só usa a instacia dessa maneira caso tenha um metodo construtor(Ver na classe Pessoa)
                     Pessoa pessoa = new Pessoa(cursor.getString(0), cursor.getString(1), cursor.getString(2), cursor.getString(3));
+                    listaDePessoas.add(pessoa);
                     //Se não tiver o metodo construtor usa dessa maneira aqui :
 //                    Pessoa pessoa = new Pessoa();
 //                    pessoa.setNome(cursor.getString(0));
@@ -91,8 +92,8 @@ public class PessoaDB extends SQLiteOpenHelper {
             }
         }
         catch (SQLException ex){
-            pessoas = null;
+            listaDePessoas = null;
         }
-        return pessoas;
+        return listaDePessoas;
     }
 }

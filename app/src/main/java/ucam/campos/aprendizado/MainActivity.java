@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TableLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -16,14 +17,13 @@ public class MainActivity extends AppCompatActivity {
              emailEtv,
              senhaEtv,
              cpfEtv;
-    Pessoa pessoa = new Pessoa();
+
     ArrayList<Pessoa> listaDePessoa = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         nomeEtv = findViewById(R.id.nomeEtv);
         cpfEtv = findViewById(R.id.cpfEtv);
         emailEtv = findViewById(R.id.emailEtv);
@@ -47,11 +47,11 @@ public class MainActivity extends AppCompatActivity {
         //pessoa.setCpf(Double.parseDouble(cpf));
 
         //Log.d("Classes", "Class de nomeEtv: " + nomeEtv.getText().getClass().getName());
-
-        pessoa.setNome(nome);
-        pessoa.setCpf(cpf);
-        pessoa.setEmail(email);
-        pessoa.setSenha(senha);
+        Pessoa pessoa = new Pessoa(nome, email, cpf, senha);
+//        pessoa.setNome();
+//        pessoa.setCpf();
+//        pessoa.setEmail();
+//        pessoa.setSenha();
 
         listaDePessoa.add(pessoa);
 

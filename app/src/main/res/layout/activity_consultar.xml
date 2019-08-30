@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ConsultarActivity">
 
-    <TableLayout
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="395dp"
         android:layout_height="715dp"
         android:layout_marginStart="8dp"
@@ -15,59 +16,34 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow
-            android:id="@+id/nomeTableRow"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="154dp">
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
 
-            <TextView
-                android:id="@+id/nomeCadastradoTv"
-                style="@style/teste"
-                android:layout_marginTop="250dp"
-                android:text="Nome cadastrados : " />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
 
-        </TableRow>
-
-        <TableRow
+        <TableLayout
+            android:id="@+id/pessoasTable"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/emailCadastradoTv"
-                style="@style/teste"
-                android:layout_marginTop="50dp"
-                android:text="Email cadastrados : " />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/cpfCadastradoTv"
-                style="@style/teste"
-                android:layout_marginTop="50dp"
-                android:text="CPFs cadastrados : " />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <TextView
-                android:id="@+id/senhaCadastradoTv"
-                style="@style/teste"
-                android:layout_marginTop="50dp"
-                android:text="Senha cadastradas : " />
-
-        </TableRow>
-
-    </TableLayout>
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
